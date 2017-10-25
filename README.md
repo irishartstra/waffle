@@ -1,15 +1,6 @@
 # waffle
 
-Matlab to be installed. ffMDD.m reads in the synthetic earthquake recordings (shots.mat) and applies the full-field MDD code.
+The Matlab script JGR.m reads in the synthetic earthquake recordings, their direct P- and S-waves, and wavelet information from mat-file: V.mat. Next, elastodynamic full-field MDD (equation ) is applied to produce the two results in the manuscript (Figures 3e and 3k)
 
-For generating the synthetic earthquake recordings (shots.mat), follow these steps:
+For generating synthetic earthquake recordings using fdelmodc: Install the finite-difference code, fdelmodc, developed by Jan Thorbecke. Source codes can be obtained directly from  https://github.com/JanThorbecke/OpenSource. More information and a fdelmodc-manual can be found on: https://janth.home.xs4all.nl/Software/Software.html. Elastodynamic double-couple responses can be generated with fdelmodc by using the shear-stress source Txz, which is selected with input parameter: source_type=2. In order to obtain responses to rotated double-couples, we additionally modelled responses of Txx and Tzz sources (source_type 4 and 3, respectively). 
 
-1Go to github/janthorbecke
-
-2Install fdelmodc makewave and makemod on your pc.
-
-3Run scat.scr -> all shots generated
-
-Apply rotation with rotation.m, which generates the shots.mat 
-
-apply ffmdd.m
